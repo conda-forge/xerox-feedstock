@@ -11,7 +11,7 @@ source:
   sha256: 1b598ed4ba017374f02e9cef983febdd19dba79a5301856fdba985c490b14325
 
 build:
-  number: 4
+  number: 5
   entry_points:
     - xerox = xerox:main
   script: {{ PYTHON }} -m pip install . -vv
