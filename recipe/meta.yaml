@@ -11,6 +11,7 @@ source:
   sha256: 1b598ed4ba017374f02e9cef983febdd19dba79a5301856fdba985c490b14325
 
 build:
+  skip: True  # [python_impl == 'pypy' and win]
   number: 7
   entry_points:
     - xerox = xerox:main
