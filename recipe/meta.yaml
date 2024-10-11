@@ -12,7 +12,7 @@ source:
 
 build:
   skip: True  # [python_impl == 'pypy' and win]
-  number: 7
+  number: 8
   entry_points:
     - xerox = xerox:main
   script: {{ PYTHON }} -m pip install . -vv
