@@ -14,4 +14,4 @@ target_platform:
 - win-64
 zip_keys:
 - - python
-  - python_impl
+  - channel_sources

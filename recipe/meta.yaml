@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 1b598ed4ba017374f02e9cef983febdd19dba79a5301856fdba985c490b14325
 
 build:
   skip: True  # [python_impl == 'pypy' and win]
-  number: 8
+  number: 9
   entry_points:
     - xerox = xerox:main
   script: {{ PYTHON }} -m pip install . -vv
