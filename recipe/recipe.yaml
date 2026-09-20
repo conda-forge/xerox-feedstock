@@ -1,0 +1,49 @@
+schema_version: 1
+
+context:
+  name: xerox
+  version: 0.4.1
+
+package:
+  name: xerox
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 1b598ed4ba017374f02e9cef983febdd19dba79a5301856fdba985c490b14325
+
+build:
+  number: 11
+  skip: python_impl == 'pypy' and win
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - xerox = xerox:main
+
+requirements:
+  host:
+    - pip
+    - python
+    - setuptools
+    - if: win
+      then: pywin32
+  run:
+    - python
+    - if: win
+      then: pywin32
+
+tests:
+  - python:
+      imports:
+        - xerox
+      pip_check: true
+
+about:
+  summary: Simple Copy + Paste in Python.
+  license: MIT
+  license_file: LICENSE
+  homepage: http://github.com/kennethreitz/xerox
+
+extra:
+  recipe-maintainers:
+    - fhoehle
